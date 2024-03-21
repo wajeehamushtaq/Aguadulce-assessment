@@ -7,8 +7,10 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: password123
-      MYSQL_DATABASE: assessment
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: your_database_name
+      MYSQL_USER: your_database_user
+      MYSQL_PASSWORD: your_database_password
 
   app:
     build:
@@ -18,3 +20,8 @@ services:
       - "4000:4000"
     depends_on:
       - db
+    environment:
+      SQL_HOST: db
+      SQL_USER: your_database_user
+      SQL_PASSWORD: your_database_password
+      SQL_DB: your_database_name
