@@ -15,6 +15,17 @@ class UserRepository {
     this.repository = datasource.getRepository(User);
   }
 
+  getAllUsers = async (): Promise<UserWithoutPassword[]> => {
+    return await [
+      {
+        email: "",
+        id: 1,
+        name: "asd",
+        username: "asd",
+      },
+    ];
+  };
+
   getOne = async (
     where: Partial<UserWithoutIdAndPassword>,
     withPassword?: boolean
@@ -31,6 +42,15 @@ class UserRepository {
     });
   };
 
+  getUserById = async (userId: string): Promise<UserWithoutPassword> => {
+    return await {
+      email: "asd",
+      id: 1,
+      username: "asd",
+      name: "asd",
+    };
+  };
+
   createUser = async (user: UserWithoutId): Promise<UserWithoutPassword> => {
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(user.password, salt);
@@ -41,6 +61,28 @@ class UserRepository {
       password: hash,
       username: user.username,
     });
+  };
+
+  updateUser = async (id: string, userToUpdate: UserWithoutPassword) => {
+    return await {
+      description: "",
+      id: 1,
+      name: "",
+      price: 0,
+    };
+  };
+
+  patchUser = async (id: string, userToPatch: Partial<UserWithoutPassword>) => {
+    return await {
+      description: "",
+      id: 1,
+      name: "",
+      price: 0,
+    };
+  };
+
+  deleteUser = async (id: string) => {
+    return await {};
   };
 }
 
