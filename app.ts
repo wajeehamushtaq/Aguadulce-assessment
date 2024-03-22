@@ -6,9 +6,11 @@ import cors from "cors";
 import indexRouter from "./routes/index";
 import passport from "./config/passport/config";
 import datasource from "./config/sql/connection";
+import dotenv from 'dotenv'
+
+dotenv.config();
 
 const app = express();
-
 app.use(cors());
 app.use(logger("dev"));
 app.use(express.json());

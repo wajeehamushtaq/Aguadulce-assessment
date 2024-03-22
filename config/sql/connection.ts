@@ -1,6 +1,9 @@
 import { DataSource } from "typeorm";
 import { User } from "../../models/user.model";
 import { Auction } from "../../models/auction.model";
+import dotenv from 'dotenv'
+
+dotenv.config();
 
 const datasource = new DataSource({
   type: "mysql",
