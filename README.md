@@ -9,6 +9,8 @@ This repository contains a backend service for interacting with an auction smart
   - Submit a Bid: Allow a user to submit a bid in a secure manner
   - Show an error message when the submitted bid amount is less than the highest bid amount
   - Statistics: Show the total number of bids made and total ETH volume
+- Added 1 complete unit and 1 integration test
+- Implement an endpoint to deploy a new auction smart contract with parameters being the end time and the beneficiary wallet address.
 
 ## Technology Stack
  ![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
@@ -32,6 +34,7 @@ This repository contains a backend service for interacting with an auction smart
   cd backend
   ```
 - Inside the backend folder, create `.env` file then copy and paste the envs from `.env.example` file into it
+- Setup mysql database locally
 - Install dependencies
   ```
   npm install
@@ -40,17 +43,7 @@ This repository contains a backend service for interacting with an auction smart
   ```
   npm run dev
   ```
-- In case, you are getting errors while running nodemon. Try this command before running the server
+- To run test cases
   ```
-  npm install --save-dev nodemon
-  ```
-  
-## Docker Setup
-- After running up the Docker engine, type this command on terminal
-  ```
-  docker-compose up --build
-  ```
-- To stop the container
-    ```
-  docker-compose down   
+  npm run test
   ```
