@@ -1,8 +1,0 @@
-FROM mysql:latest
-
-ENV MYSQL_ROOT_PASSWORD=root_password
-ENV MYSQL_DATABASE=your_database_name
-ENV MYSQL_USER=your_database_user
-ENV MYSQL_PASSWORD=your_database_password
-
-EXPOSE 3306
