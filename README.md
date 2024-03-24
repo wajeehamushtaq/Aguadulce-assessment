@@ -22,6 +22,9 @@ This repository contains a backend service for interacting with an auction smart
 | Node JS | 16.17.0 |
 | Express JS | 4.18.2 |
 
+## API documentation
+All the documentation related to Authentication and Auction APIs are written within API Documentation.md file
+
 ## Local Machine Setup
 - Open Terminal and type
   ```
@@ -30,7 +33,7 @@ This repository contains a backend service for interacting with an auction smart
 ### For Backend setup
 - 
   ```
-  cd backend
+  cd Aguadulce-assessment
   ```
 - Inside the backend folder, create `.env` file then copy and paste the envs from `.env.example` file into it
 - Setup mysql database locally
