@@ -1,6 +1,6 @@
-import { Repository } from "typeorm";
-import { Auction } from "../models/auction.model";
+import { QueryRunner, Repository } from "typeorm";
 import datasource from "../config/sql/connection";
+import { Auction } from "../models/Auction.model";
 
 class AuctionRepository {
   repository: Repository<Auction>;
@@ -9,16 +9,27 @@ class AuctionRepository {
     this.repository = datasource.getRepository(Auction);
   }
 
-  getAll = async (): Promise<Auction[]> => {
-    return await this.repository.find();
+  getOne = async (auctionID: number): Promise<Auction | null> => {
+    return await this.repository.findOne({ where: { id: auctionID } });
   };
 
   create = async (
-    data: Pick<Auction, "bidder" | "value">
+    data: Partial<Auction>,
+    queryRunner: QueryRunner
   ): Promise<Auction> => {
-    return await this.repository.save({
-      bidder: data.bidder,
-      value: data.value,
+    return await queryRunner.manager.save(Auction, {
+      address: "",
+      createdAt: new Date(),
+    });
+  };
+
+  update = async (
+    data: Partial<Auction>,
+    queryRunner: QueryRunner
+  ): Promise<Auction> => {
+    return await queryRunner.manager.save(Auction, {
+      id: data.id,
+      address: data.address,
     });
   };
 }

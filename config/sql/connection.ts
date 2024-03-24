@@ -1,7 +1,8 @@
 import { DataSource } from "typeorm";
 import { User } from "../../models/user.model";
-import { Auction } from "../../models/auction.model";
-import dotenv from 'dotenv'
+import { Bid } from "../../models/bid.model";
+import dotenv from "dotenv";
+import { Auction } from "../../models/Auction.model";
 
 dotenv.config();
 
@@ -12,7 +13,7 @@ const datasource = new DataSource({
   username: process.env.SQL_USER,
   password: process.env.SQL_PASSWORD,
   database: process.env.SQL_DB,
-  entities: [User, Auction],
+  entities: [User, Bid, Auction],
   logging: true,
 });
 
