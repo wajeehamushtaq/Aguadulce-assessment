@@ -7,7 +7,12 @@ class AuctionPayloadValidation {
     return [
       body("bidder", "bidder does not exist").notEmpty(),
       body("value", "value does not exist").notEmpty(),
+      body("auctionID", "auctionID does not exist").notEmpty(),
     ];
+  };
+
+  deploy = () => {
+    return [body("endTime", "endTime does not exist").notEmpty()];
   };
 }
 
