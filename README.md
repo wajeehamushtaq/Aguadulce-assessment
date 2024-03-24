@@ -21,7 +21,6 @@ This repository contains a backend service for interacting with an auction smart
 | MySQL DB | 8.0.0 |
 | Node JS | 16.17.0 |
 | Express JS | 4.18.2 |
-| Docker | 24.0.7 |
 
 ## Local Machine Setup
 - Open Terminal and type
